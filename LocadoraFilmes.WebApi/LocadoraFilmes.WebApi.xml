@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LocadoraFilmes.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.AuthController.Login(LocadoraFilmes.Application.DTOs.ClienteDto,System.Threading.CancellationToken)">
+            <summary>
+            Fazer login na aplicação(obter o token que seja usado nas outras rotas)
+            </summary>
+            <param name="clienteDto">Objeto contendo informações do cliente para o login</param>
+            <returns>
+            Um token de acesso JWT válido, que pode ser usado nas outras rotas da aplicação.
+            Exemplo:
+            
+            <code>
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+            </code>
+            </returns>
+            <response code="200">Retorna um token de acesso JWT válido</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.AuthController.Register(LocadoraFilmes.Application.DTOs.ClienteDto,System.Threading.CancellationToken)">
+            <summary>
+            Registra um novo cliente na aplicação.
+            </summary>
+            <param name="clienteDto">Objeto contendo informações do novo cliente.</param>
+            <param name="cancellationToken">Token de cancelamento para interromper a operação.</param>
+            <returns>
+            Retorna um token de acesso JWT válido para o cliente recém-registrado.
+            </returns>
+            <response code="201">O cliente foi registrado com sucesso e um token de acesso foi gerado.</response>
+            <response code="409">Conflito. Um cliente com o mesmo CPF já está registrado.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.FilmeController.ObterFilme(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Obtém as informações de um filme pelo seu ID.
+            </summary>
+            <param name="idFilme">ID único do filme.</param>
+            <param name="cancellationToken">Token de cancelamento para interromper a operação.</param>
+            <returns>
+            Retorna um objeto FilmeDto que contém as informações detalhadas do filme.
+            </returns>
+            <response code="200">Retorna os detalhes do filme.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.FilmeController.ObterTodosFilmes(System.Threading.CancellationToken)">
+            <summary>
+            Obtém todos os filmes disponíveis na aplicação.
+            </summary>
+            <param name="cancellationToken">Token de cancelamento para interromper a operação.</param>
+            <returns>
+            Retorna um array de objetos FilmeDto que contém informações resumidas de todos os filmes.
+            </returns>
+            <response code="200">Retorna a lista de todos os filmes.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.FilmeController.CriarFilme(LocadoraFilmes.Application.DTOs.Request.FilmeRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Cria um novo filme na aplicação.
+            </summary>
+            <param name="filmeDto">Objeto contendo informações do novo filme.</param>
+            <param name="cancellationToken">Token de cancelamento para interromper a operação.</param>
+            <returns>
+            Retorna os detalhes do filme recém-criado.
+            </returns>
+            <response code="201">O filme foi criado com sucesso.</response>
+            <response code="400">Requisição inválida. Verifique os dados fornecidos.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.FilmeController.AlterarFilme(System.Int32,LocadoraFilmes.Application.DTOs.Request.FilmeRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Altera as informações de um filme existente na aplicação.
+            </summary>
+            <param name="idFilme">ID único do filme a ser alterado.</param>
+            <param name="filmeDto">Objeto contendo as novas informações do filme.</param>
+            <returns>
+            Retorna uma resposta sem conteúdo para indicar que o filme foi alterado com sucesso.
+            </returns>
+            <response code="204">O filme foi alterado com sucesso.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.FilmeController.DeletarFilme(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Exclui um filme da aplicação pelo seu ID.
+            </summary>
+            <param name="idFilme">ID único do filme a ser excluído.</param>
+            <returns>
+            Retorna uma resposta sem conteúdo para indicar que o filme foi excluído com sucesso.
+            </returns>
+            <response code="204">O filme foi excluído com sucesso.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.FilmeController.DeletarVariosFilmes(System.Collections.Generic.List{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Exclui vários filmes da aplicação pelos seus IDs.
+            </summary>
+            <param name="idFilme">Array contendo os IDs únicos dos filmes a serem excluídos.</param>
+            <returns>
+            Retorna uma resposta sem conteúdo para indicar que os filmes foram excluídos com sucesso.
+            </returns>
+            <response code="204">Os filmes foram excluídos com sucesso.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.GeneroController.ObterGenero(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Obtém as informações de um genero pelo seu ID.
+            </summary>
+            <param name="idGenero">ID único do genero.</param>
+            <param name="cancellationToken">Token de cancelamento para interromper a operação.</param>
+            <returns>
+            Retorna um objeto GeneroDto que contém as informações detalhadas do genero.
+            </returns>
+            <response code="200">Retorna os detalhes do genero.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.GeneroController.ObterTodosGeneros(System.Threading.CancellationToken)">
+            <summary>
+            Obtém todos os generos disponíveis na aplicação.
+            </summary>
+            <param name="cancellationToken">Token de cancelamento para interromper a operação.</param>
+            <returns>
+            Retorna um array de objetos GeneroDto que contém informações resumidas de todos os generos.
+            </returns>
+            <response code="200">Retorna a lista de todos os generos.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.GeneroController.CriarGenero(LocadoraFilmes.Application.DTOs.Request.GeneroRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Cria um novo genero na aplicação.
+            </summary>
+            <param name="generoDto">Objeto contendo informações do novo genero.</param>
+            <param name="cancellationToken">Token de cancelamento para interromper a operação.</param>
+            <returns>
+            Retorna os detalhes do genero recém-criado.
+            </returns>
+            <response code="201">O genero foi criado com sucesso.</response>
+            <response code="400">Requisição inválida. Verifique os dados fornecidos.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.GeneroController.AlterarGenero(System.Int32,LocadoraFilmes.Application.DTOs.Request.GeneroRequestDto)">
+            <summary>
+            Altera as informações de um genero existente na aplicação.
+            </summary>
+            <param name="idGenero">ID único do genero a ser alterado.</param>
+            <param name="generoDto">Objeto contendo as novas informações do genero.</param>
+            <returns>
+            Retorna uma resposta sem conteúdo para indicar que o genero foi alterado com sucesso.
+            </returns>
+            <response code="204">O genero foi alterado com sucesso.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+        <member name="M:LocadoraFilmes.WebApi.Controllers.GeneroController.DeletarGenero(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Exclui um genero da aplicação pelo seu ID.
+            </summary>
+            <param name="idGenero">ID único do genero a ser excluído.</param>
+            <returns>
+            Retorna uma resposta sem conteúdo para indicar que o genero foi excluído com sucesso.
+            </returns>
+            <response code="204">O genero foi excluído com sucesso.</response>
+            <response code="401">Não autorizado. O token de acesso pode ser inválido.</response>
+            <response code="500">Ocorreu um erro. Tente novamente mais tarde!</response>
+        </member>
+    </members>
+</doc>

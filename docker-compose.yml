@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  locadorafilmes.webapi:
+    image: ${DOCKER_REGISTRY-}locadorafilmeswebapi
+    build:
+      context: .
+      dockerfile: LocadoraFilmes.WebApi/Dockerfile

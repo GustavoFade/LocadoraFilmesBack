@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFilmes.WebApi", "LocadoraFilmes.WebApi\LocadoraFilmes.WebApi.csproj", "{38FDF582-655C-4174-A5FE-0DA31E55C033}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFilmes.Infra.IoC", "Infra\LocadoraFilmes.Infra.IoC.csproj", "{876FFB57-D903-4831-AF15-774692377C01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFilmes.Domain", "LocadoraFilmes.Domain\LocadoraFilmes.Domain.csproj", "{76B5B801-3962-4C4E-B40E-AF976B7E1EDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFilmes.Application", "LocadoraFilmes.Application\LocadoraFilmes.Application.csproj", "{B0C5B7CA-493D-49E2-9E41-DC62E7AB45A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFilmes.Infra.Data", "LocadoraFilmes.Infra.Data\LocadoraFilmes.Infra.Data.csproj", "{7B0A4547-2645-4266-B321-897C2A311C4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFilmes.Domain.Tests", "LocadoraFilmes.Domain.Tests\LocadoraFilmes.Domain.Tests.csproj", "{EE0C9BB0-3AA7-46E2-8490-FA1D0A1C33C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{027EB769-DE29-4728-880D-D3F1027DF64A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38FDF582-655C-4174-A5FE-0DA31E55C033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38FDF582-655C-4174-A5FE-0DA31E55C033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38FDF582-655C-4174-A5FE-0DA31E55C033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38FDF582-655C-4174-A5FE-0DA31E55C033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{876FFB57-D903-4831-AF15-774692377C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876FFB57-D903-4831-AF15-774692377C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876FFB57-D903-4831-AF15-774692377C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876FFB57-D903-4831-AF15-774692377C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B5B801-3962-4C4E-B40E-AF976B7E1EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B5B801-3962-4C4E-B40E-AF976B7E1EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B5B801-3962-4C4E-B40E-AF976B7E1EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B5B801-3962-4C4E-B40E-AF976B7E1EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C5B7CA-493D-49E2-9E41-DC62E7AB45A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C5B7CA-493D-49E2-9E41-DC62E7AB45A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C5B7CA-493D-49E2-9E41-DC62E7AB45A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C5B7CA-493D-49E2-9E41-DC62E7AB45A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B0A4547-2645-4266-B321-897C2A311C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B0A4547-2645-4266-B321-897C2A311C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B0A4547-2645-4266-B321-897C2A311C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B0A4547-2645-4266-B321-897C2A311C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0C9BB0-3AA7-46E2-8490-FA1D0A1C33C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0C9BB0-3AA7-46E2-8490-FA1D0A1C33C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0C9BB0-3AA7-46E2-8490-FA1D0A1C33C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0C9BB0-3AA7-46E2-8490-FA1D0A1C33C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E88E821-CB78-4FEB-8A5C-8294FA9273B6}
+	EndGlobalSection
+EndGlobal
