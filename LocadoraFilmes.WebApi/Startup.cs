@@ -57,6 +57,16 @@ namespace LocadoraFilmes.WebApi
                 c.IncludeXmlComments(xmlModelPath);
             });
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
+
             services.AddJwtBearerAutentication(Configuration);
             services.AddControllers();
             services.AddDataServices(Configuration);
@@ -76,6 +86,7 @@ namespace LocadoraFilmes.WebApi
 
             app.UseRouting();
 
+            app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
             app.ConfigureExceptionHandler();
