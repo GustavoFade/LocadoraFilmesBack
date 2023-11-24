@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace LocadoraFilmes.Infra.Data.Repositories.Common
 {
+    //criado o UnitOfWork para concentrarmos em uma única transação na request
+    //se houver alguma falha, nada vai ser salvado no banco
+    //se houver sucesso, chamaremos o CommitTransactionAsync e será salvo no banco
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly ApplicationDbContext _context;

@@ -53,6 +53,7 @@ namespace LocadoraFilmes.WebApi
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, "LocadoraFilmes.WebApi.xml");
                 var xmlModelPath = Path.Combine(AppContext.BaseDirectory, "LocadoraFilmes.Application.xml");
 
+                //documentando a api(arquivos swagger)
                 c.IncludeXmlComments(xmlPath);
                 c.IncludeXmlComments(xmlModelPath);
             });
@@ -67,9 +68,18 @@ namespace LocadoraFilmes.WebApi
                 });
             });
 
+            //método de extensão criado para deixar mais organizado o código
+            //decidi fazer uma simples classe para gerar o JWT, não vi a nessecidade de utilizar
+            //o identityserver4 por ser um projeto pequeno, adicionei somente o cpf do usuário na claim
             services.AddJwtBearerAutentication(Configuration);
             services.AddControllers();
+
+            //método de extensão criado para deixar mais organizado o código
+            //e para o webapi não depender diretamente das classe que precisam ser criadas
             services.AddDataServices(Configuration);
+
+            //método de extensão criado para deixar mais organizado o código
+            //e para o webapi não depender diretamente das classe que precisam ser criadas
             services.AddSerives();
         }
 
@@ -89,6 +99,10 @@ namespace LocadoraFilmes.WebApi
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            //usado o app.UseExceptionHandler para capturar exceções inesperadas,
+            //assim posso retornar uma mensagem padrão para o usuário e não precisarei
+            //fazer isso para cada endpoint
             app.ConfigureExceptionHandler();
             app.UseEndpoints(endpoints =>
             {

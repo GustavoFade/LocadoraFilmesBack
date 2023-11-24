@@ -5,8 +5,12 @@ using System.Collections.Generic;
 
 namespace LocadoraFilmes.Domain.Entities
 {
+    // As propriedades são privadas para garantir que apenas os métodos internos possam modificá-las.
+    // Isso evita alterações não validadas e garante que a entidade seja salva somente após a validação adequada.
     public sealed class Filme : Entity
     {
+        // Construtor padrão para a criação de uma instância de Cliente.
+        // Útil em cenários onde a entidade precisa ser inicializada sem dados específicos.
         public Filme()
         {
 

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace LocadoraFilmes.Infra.Data.Repositories.Common
 {
+    //criado um repository base para não ter que ficar criando e adicionando os logs para
+    //cada repository, no caso, os logs de error já estão concentrados aqui
     public class BaseRepository<TEntity, TContext> : IBaseRepository<TEntity, TContext>
         where TEntity : Entity
         where TContext : DbContext

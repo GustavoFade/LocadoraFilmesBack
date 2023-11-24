@@ -209,6 +209,8 @@ namespace LocadoraFilmes.WebApi.Controllers
         {
             try
             {
+
+                //para remover mais de um, usei a abordagem de receber os ids especificos a ser deletado na rota, assim excluiremos eles
                 await _filmeService.DeleteManyAsync(idFilme, cancellationToken);
                 await _unitOfWork.CommitTransactionAsync();
 

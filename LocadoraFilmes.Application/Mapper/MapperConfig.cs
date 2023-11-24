@@ -6,6 +6,7 @@ using LocadoraFilmes.Domain.Entities;
 
 namespace LocadoraFilmes.Application.Mapper
 {
+    //conversão dos dtos para as entidades
     public class MapperConfig : Profile
     {
         public MapperConfig()

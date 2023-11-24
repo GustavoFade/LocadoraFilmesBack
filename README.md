@@ -44,3 +44,13 @@
 
 <p>Agora você está pronto para explorar e trabalhar com o projeto. Em caso de dúvidas ou problemas, consulte a documentação do Docker e do .NET para obter assistência adicional.</p>
 
+<h1>Explicação de algumas classes contidas no projeto</h1>
+<b>UnitOfWork</b>
+Usado esse pattern para usar uma única transação na request, ou seja, se chegar no final da request e dar tudo certo
+a gente só dá commit e salva no banco, se dar alguma exceção, a classe dará dispose e não será salvo nada no banco
+
+<b>Usando o CancellationToken nas request?</b>
+Ele oferece um mecanismo para cancelar operações assíncronas.
+É frequentemente usado em operações assíncronas para fornecer uma maneira de sinalizar que uma tarefa ou operação deve ser cancelada. Isso é particularmente útil em cenários onde o usuário deseja interromper uma operação em andamento, 
+como uma operação de download, processamento de dados, ou uma tarefa em segundo plano.
+

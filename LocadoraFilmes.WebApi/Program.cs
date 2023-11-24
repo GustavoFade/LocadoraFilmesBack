@@ -25,7 +25,7 @@ namespace LocadoraFilmes.WebApi
                     webBuilder.UseStartup<Startup>();
                 });
 
-
+        //método criado para aplicar automaticamente as migrations na base
         private static void CreateDataBaseAndApplyMigrations(IHost host)
         {
             try
